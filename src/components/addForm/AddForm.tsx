@@ -2,7 +2,6 @@ import React, { FC, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-import styles from "./addForm.module.css";
 import { Units } from "../../datastructures";
 import { WithContext as ReactTags } from "react-tag-input";
 
@@ -13,27 +12,44 @@ interface Tag {
   id: string,
   text: string
 }
+
 const AddForm: FC<AddFormProps> = (props: AddFormProps) => {
   const [show, setShow] = useState(false);
+  const [tags, setTags] = React.useState([] as Array<Tag>);
+  const [name, setName] = React.useState('');
+  const [location, setLocation] = React.useState('');
+  const [amount, setAmount] = React.useState(0);
+  const [unit, setUnit] = React.useState(Units.st);
+
   const handleShow = () => {
     setShow(true);
   };
+
+  const handleSubmit = () => {
+     
+    console.log(name, location, amount, unit, tags)
+    handleClose();
+  };
   const handleClose = () => {
+    setName('');
+    setLocation('');
+    setAmount(0);
+    setUnit(Units.st);
+    setTags([] as Array<Tag>);
     setShow(false);
   };
-  const [tags, setTags] = React.useState([] as Array<Tag>);
+
   const handleDelete = (i: number) => {
-    console.log(tags.filter((tag, index) => index !== i));
     setTags(tags.filter((tag, index) => index !== i));
   };
 
   const handleAddition = (tag: Tag) => {
     setTags([...tags, tag]);
-    console.log(tag, tags);
   };
+  
   return (
     <span>
-      <Button className="p-2" variant="primary" onClick={handleShow}>
+      <Button className="p-2" variant="success" onClick={handleShow}>
         Lägg till ny produkt +
       </Button>
       <Modal show={show} onHide={handleClose}>
@@ -44,25 +60,24 @@ const AddForm: FC<AddFormProps> = (props: AddFormProps) => {
           <Form>
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Namn</Form.Label>
-              <Form.Control type="text" placeholder="Toalettpapper" />
-              <Form.Text className="text-muted">Namn på produkten.</Form.Text>
+              <Form.Control type="text" placeholder="Toalettpapper" value={name} onChange={e => setName(e.target.value)}/>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="location">
+            <Form.Group className="mb-3" controlId="location" >
               <Form.Label>Plats</Form.Label>
-              <Form.Control type="text" placeholder="Kylskåp" />
+              <Form.Control type="text" placeholder="Kylskåp" value={location} onChange={e => setLocation(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="amount">
               <Form.Label>Antal</Form.Label>
-              <Form.Control type="text" placeholder="3" />
+              <Form.Control type="number" placeholder="3" value={amount} onChange={e => setAmount(parseInt(e.target.value))}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="unit">
               <Form.Label>Enhet</Form.Label>
-              <Form.Select>
-                <option value={Units.st}>st</option>
-                <option value={Units.kg}>kilo</option>
-                <option value={Units.g}>gram</option>
-                <option value={Units.l}>liter</option>
-                <option value={Units.ml}>milliliter</option>
+              <Form.Select value={unit} onChange={e => setUnit(e.target.value as Units)}>
+                <option value={Units.st}>{Units.st}</option>
+                <option value={Units.kg}>{Units.kg}</option>
+                <option value={Units.g}>{Units.g}</option>
+                <option value={Units.l}>{Units.l}</option>
+                <option value={Units.ml}>{Units.ml}</option>
               </Form.Select>
             </Form.Group>
             <Form.Group>
@@ -74,19 +89,17 @@ const AddForm: FC<AddFormProps> = (props: AddFormProps) => {
                 inputFieldPosition="bottom"
                 allowDragDrop={false}
                 autocomplete
+                placeholder="Lägg till taggar"
               />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Avbryt
           </Button>
-          <Button variant="primary" type="submit" onClick={handleClose}>
-            Save Changes
+          <Button variant="success" type="submit" onClick={handleSubmit}>
+            Lägg till
           </Button>
         </Modal.Footer>
       </Modal>

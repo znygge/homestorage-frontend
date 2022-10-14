@@ -14,14 +14,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #7EC984;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-top-left-radius:-10px;
+  border-top-right-radius:-10px;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
 }
 
 .App-link {
@@ -54,7 +58,7 @@
 /* Styles for selected tags */
 .ReactTags__selected span.ReactTags__tag {
   border: 1px solid #ddd;
-  background: #0d6efd;
+  background: #66a06a;
   color: white;
   font-size: 14px;
   display: inline-block;
