@@ -6,11 +6,14 @@ export enum Units {
   ml="Milliliter",
 }
 
-export interface Product {
+export interface Product extends NewProduct{
+  _id: string,
+}
+export interface NewProduct {
   name: string,
   location: string,
   amount: number,
   unit: string,
-  tag: string[],
-  category: string 
+  tags: string[],
+  category?: string 
 }
