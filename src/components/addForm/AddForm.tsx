@@ -82,7 +82,7 @@ tags
 
   return (
     <span>
-      <Button className="p-2" variant="success" onClick={handleShow}>
+      <Button className="p-2" variant="primary" onClick={handleShow}>
         Lägg till ny produkt +
       </Button>
       <Modal show={show} onHide={handleClose}>
@@ -149,7 +149,7 @@ tags
           <Button variant="secondary" onClick={handleClose}>
             Avbryt
           </Button>
-          <Button variant="success" type="submit" onClick={handleSubmit}>
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
             Lägg till
           </Button>
         </Modal.Footer>
