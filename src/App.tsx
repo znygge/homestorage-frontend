@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AddForm from './components/addForm/AddForm';
 import Products from './components/Products/Products';
 import { Product } from './datastructures';
+import Search from './components/Search/Search';
 
 function App() {
   const [itemList, setItemList] = useState([] as Array<Product>);
@@ -33,6 +34,7 @@ function App() {
         <img src="/assets/Logo.svg" alt="Logga"/>
         <div className='App-header-arch' />
       </header>
+      <Search setList={setItemList} />
       <Container>
         <Row>
         <Col></Col>
