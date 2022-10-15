@@ -21,7 +21,7 @@ const Products: FC<ProductsProps> = (props: ProductsProps) => {
               <div className="fw-bold">{item.name}</div>
             </div>
             <Badge bg="success" pill>
-              {item.amount}
+              {`${item.amount} ${item.unit}` }
             </Badge>
           </ListGroup.Item>
         );
