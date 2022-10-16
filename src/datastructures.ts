@@ -1,10 +1,18 @@
 export enum Units {
-  st="Styck",
-  kg="Kilogram",
-  g="Gram",
-  l="Liter",
-  ml="Milliliter",
+  st="st",
+  kg="kg",
+  g="g",
+  l="l",
+  ml="ml",
 }
+
+export enum UnitsString {
+    st="Styck",
+    kg="Kilogram",
+    g="Gram",
+    l="Liter",
+    ml="Milliliter",
+  }
 
 export interface Product extends NewProduct{
   _id: string,
