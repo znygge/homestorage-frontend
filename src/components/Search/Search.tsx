@@ -68,7 +68,7 @@ const Search: FC<SearchProps> = (props) => {
   };
 
   return (
-    <InputGroup className="p-3 pt-0" style={{ fontSize: "18pt" }}>
+    <InputGroup  className="p-3 pt-0" style={{ fontSize: "18pt" , position:"sticky", top:"6px"}}>
       <Form.Control
         style={{
           borderColor: "#7EC984 !important",
