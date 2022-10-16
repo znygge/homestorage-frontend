@@ -128,3 +128,23 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes fallingFruit {
+  from {
+    top: -50%;
+  }
+  to {
+    top: 100%;
+  }
+}
+@keyframes fallingFruitWrapper {
+  0% {
+    display: block;
+  }
+  99%{
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
