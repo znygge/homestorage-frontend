@@ -1,0 +1,28 @@
+<svg id="melon" xmlns="http://www.w3.org/2000/svg" width="111.013" height="111.013" viewBox="0 0 111.013 111.013">
+  <g id="XMLID_39_">
+    <g id="XMLID_36_" transform="translate(2.709 2.759)">
+      <path id="XMLID_263_" d="M837.239,222.6A61.829,61.829,0,0,1,749.8,310.039Z" transform="translate(-749.8 -222.6)" fill="#54b248"/>
+    </g>
+    <g id="XMLID_37_" transform="translate(12.99 13.04)">
+      <path id="XMLID_255_" d="M837.077,243A47.289,47.289,0,0,1,770.2,309.877Z" transform="translate(-770.2 -243)" fill="#f04d49"/>
+    </g>
+    <g id="XMLID_56_" transform="translate(54.82 13.04)">
+      <path id="XMLID_314_" d="M878.247,243l-12.8,12.8c7.156,8.064,23.485,33.212-12.247,67.129A47.227,47.227,0,0,0,878.247,243Z" transform="translate(-853.2 -243)" fill="#e53a39"/>
+    </g>
+    <g id="XMLID_32_" transform="translate(0)">
+      <path id="XMLID_260_" d="M790.879,328.138a64.372,64.372,0,0,1-45.66-18.9,2.768,2.768,0,0,1,0-3.881l87.439-87.439a2.768,2.768,0,0,1,3.881,0,64.559,64.559,0,0,1-45.66,110.219Zm-39.814-20.865a59.114,59.114,0,0,0,83.508-83.508Z" transform="translate(-744.425 -217.125)" fill="#561114"/>
+    </g>
+    <g id="XMLID_38_" transform="translate(11.075 11.125)">
+      <path id="XMLID_259_" d="M801.779,324.573A50.035,50.035,0,0,1,766.4,309.958l3.881-3.881a44.545,44.545,0,0,0,63-63l3.881-3.881a49.994,49.994,0,0,1-35.379,85.373Z" transform="translate(-766.4 -239.2)" fill="#561114"/>
+    </g>
+    <g id="XMLID_40_" transform="translate(35.597 69.296)">
+      <rect id="XMLID_258_" width="5.493" height="6.4" transform="translate(4.526 0) rotate(45)" fill="#561114"/>
+    </g>
+    <g id="XMLID_41_" transform="translate(65.256 56.504)">
+      <rect id="XMLID_257_" width="5.493" height="5.796" transform="translate(4.098 0) rotate(45)" fill="#561114"/>
+    </g>
+    <g id="XMLID_42_" transform="translate(69.341 33.496)">
+      <rect id="XMLID_256_" width="5.493" height="7.509" transform="translate(5.31 0) rotate(45)" fill="#561114"/>
+    </g>
+  </g>
+</svg>
