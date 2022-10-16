@@ -1,12 +1,14 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-import { NewProduct, Product, Units } from "../../datastructures";
+import { NewProduct, Product, Units, UnitsString } from "../../datastructures";
 import { WithContext as ReactTags } from "react-tag-input";
 
 interface AddFormProps {
   show?: boolean;
+  loadData?: Product;
+  clearLoaded?:Function;
 }
 interface Tag {
   id: string;
@@ -21,6 +23,17 @@ const AddForm: FC<AddFormProps> = (props: AddFormProps) => {
   const [amount, setAmount] = React.useState(0);
   const [unit, setUnit] = React.useState(Units.st);
 
+  useEffect(() => {
+    if(props.loadData){
+      setTags(props.loadData.tags.map((_id: string) => ({id:_id, text:_id} as any)));
+      setName(props.loadData.name);
+      setLocation(props.loadData.location);
+      setAmount(props.loadData.amount);
+      console.log(props.loadData.unit)
+      setUnit(props.loadData.unit as Units);
+      handleShow();
+    }
+  },[props.loadData]);
   const handleShow = () => {
     setShow(true);
   };
@@ -64,6 +77,8 @@ tags
     });
   };
   const handleClose = () => {
+    if(props.clearLoaded)
+      props.clearLoaded();
     setName("");
     setLocation("");
     setAmount(0);
@@ -124,11 +139,11 @@ tags
                 value={unit}
                 onChange={(e) => setUnit(e.target.value as Units)}
               >
-                <option value={Units.st}>{Units.st}</option>
-                <option value={Units.kg}>{Units.kg}</option>
-                <option value={Units.g}>{Units.g}</option>
-                <option value={Units.l}>{Units.l}</option>
-                <option value={Units.ml}>{Units.ml}</option>
+                <option value={Units.st}>{UnitsString.st}</option>
+                <option value={Units.kg}>{UnitsString.kg}</option>
+                <option value={Units.g}>{UnitsString.g}</option>
+                <option value={Units.l}>{UnitsString.l}</option>
+                <option value={Units.ml}>{UnitsString.ml}</option>
               </Form.Select>
             </Form.Group>
             <Form.Group>
